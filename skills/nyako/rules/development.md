@@ -16,9 +16,13 @@
 
 之后利用 grep/astgrep 等工具进行代码搜索和分析。
 
-对于代码库的学习，请同样遵循知识管理的原则，将学习到的内容存储到知识库中，便于后续查阅和使用。
+**知识存储强制规则 (Mandatory Knowledge Storage):**
 
-代码库的知识请存储在 `~/.nyako/knowledge/repos/<org>/<repo>/` 目录下，以便于区分不同代码库的知识内容，注意对于相同代码库的不同 fork，只需要按照最上游仓库进行存储即可，避免重复存储。
+- **必须**遵循知识管理原则，将学习到的代码库知识存储下来。
+- **存储路径**: `~/.nyako/knowledge/repos/<org>/<repo>/`
+- **规范**:
+  - 对于同一个仓库的不同 fork，统一存储在最上游 (upstream) 的 `<org>` 目录下。
+  - **严禁**使用 `projects` 或其他模糊的目录名，必须精确对应 GitHub 仓库结构。
 
 ## GitHub Issue/PR Research
 

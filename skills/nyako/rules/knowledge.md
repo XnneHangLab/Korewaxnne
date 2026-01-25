@@ -13,7 +13,9 @@
 
 - `~/.nyako/knowledge/technologies/`: 语言、框架、工具 (e.g., `python/asyncio.md`, `react/hooks.md`)
 - `~/.nyako/knowledge/issues/`: 常见问题与错误 (e.g., `memory-leaks/node-worker.md`)
-- `~/.nyako/knowledge/projects/`: 特定项目的知识 (e.g., `owner/repo/architecture.md`)
+- `~/.nyako/knowledge/repos/`: GitHub 仓库专用知识库 (**强制使用此路径存储项目相关知识**)
+  - 结构: `~/.nyako/knowledge/repos/<owner>/<repo>/`
+  - 示例: `repos/pytorch/pytorch/architecture.md`
 - `~/.nyako/knowledge/best-practices/`: 通用最佳实践 (e.g., `git/commit-convention.md`)
 - `~/.nyako/knowledge/archived/`: 过时或错误的知识
 
