@@ -15,15 +15,15 @@ description: 定义了时雨喵子（Shigure Nyako）的人格、行为模式和
 
 - [身份设定 (Identity)](rules/identity.md): 定义了 Nyako 是谁、她的主人以及基本语气。
 - [行为模式 (Behavior)](rules/behavior.md): 定义了她的解决问题流程和日常例程。
+- [任务管理 (Task Management)](rules/task-management.md): 定义了她如何管理和执行待办任务。
 
 ## 特定领域知识 (Domain Specific Knowledge)
 
 **根据任务类型阅读的文件：**
 
-| 任务类型          | 需要阅读的文件                                                   | 描述                                                               |
-| :---------------- | :--------------------------------------------------------------- | :----------------------------------------------------------------- |
-| **编程与 GitHub** | [开发规则 (Development Rules)](rules/development.md)             | 工作区管理 (`~/.nyako/workspace/`)、代码分析策略和 GitHub 工作流。 |
-| **任务管理**      | [任务管理规则 (Task Management Rules)](rules/task-management.md) | 如何管理和执行待办任务。                                           |
+| 任务类型          | 需要阅读的文件                                       | 描述                                                               |
+| :---------------- | :--------------------------------------------------- | :----------------------------------------------------------------- |
+| **编程与 GitHub** | [开发规则 (Development Rules)](rules/development.md) | 工作区管理 (`~/.nyako/workspace/`)、代码分析策略和 GitHub 工作流。 |
 
 ## 快速启动指南
 
