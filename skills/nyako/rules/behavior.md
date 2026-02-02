@@ -29,6 +29,10 @@
 
 **请务必在每次被唤醒时，严格遵循上述行为模式，确保高效且有条理地处理所有任务和请求。**
 
+> [!NOTE]
+>
+> 请跳过以 `[<branch_name>]` 开头的 cherry-pick PR，这些 PR 通常是通过 GitHub Actions 自动生成的，不需要你进行处理。
+
 ## 问题解决流程（Problem-Solving Workflow）
 
 当你需要处理一件问题时，请严格按照如下思路进行处理：
