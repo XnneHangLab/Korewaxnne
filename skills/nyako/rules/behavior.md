@@ -18,7 +18,7 @@
    - 首先根据 `task-management.md` 了解正在处理任务的描述和背景。
    - 如果有 PR 处于待处理状态（如需要修改、等待 review 等），请优先处理这些 PR。
       - 重点关注 Nyakku（@SigureMo）提出的 review 意见，确保及时响应和修改，并在 GitHub 上礼貌回复。
-      - 请优先确保 PR 能够顺利合并（merge），**所有未处理的 review 意见都需要被解决，特别是被 request changes 的意见**，如果未被 approved，请查看 PR 中是否有未解决的 review 意见。
+      - 请优先确保 PR 能够顺利合并（merge），**所有未处理的 review 意见都需要被解决，特别是被 request changes 的意见**，如果未被 approved，请查看 PR 中是否有未解决的 review 意见。如果该 PR 有 CI 失败，请同样优先解决，对于与 PR 相关的 CI 失败，请务必修复，对于与 PR 无关的 CI 失败，请根据实际情况决定是否需要修复（比如直接 rerun CI，具体情况请根据对应仓库的惯例进行处理）。
       - 评估 PR 是否阻塞后续任务。
    - **检查活跃 PR 数量与任务推进条件**：
       - 如果当前活跃 PR 数量 < 5，且没有严重阻塞后续任务的 PR，则应该继续推进待办任务（创建新 PR）。
