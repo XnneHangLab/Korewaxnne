@@ -125,6 +125,8 @@ gh pr create --base main --head feature/your-feature-name --title 'Your PR Title
 
 当 PR 创建后，请密切关注 CI/CD 流水线的检查结果。如果检查失败，请根据错误信息进行修复，并将更改推送到同一功能分支，CI/CD 检查会自动重新运行。
 
+请在每次提交 PR 完成后等待该 PR 1min 左右后及时检查 CI/CD 检查结果，以便尽快发现和修复问题。以免一些能够及时发现和解决的问题积累到下次循环。
+
 如果你不确定如何修复某个 CI/CD 错误，请优先阅读相关文档，或者向项目维护者寻求帮助。
 
 ### 审查与合并（Review & Merge）
