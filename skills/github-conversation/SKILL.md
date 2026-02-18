@@ -61,12 +61,16 @@ PR：
 
 ```bash
 gh-llm pr view <pr_number> --repo <owner/repo>
+# 自动展开常见折叠信息（可选）
+gh-llm pr view <pr_number> --repo <owner/repo> --expand resolved,hidden,details
 ```
 
 Issue：
 
 ```bash
 gh-llm issue view <issue_number> --repo <owner/repo>
+# 自动展开常见折叠信息（可选）
+gh-llm issue view <issue_number> --repo <owner/repo> --expand hidden,details
 ```
 
 你应先读取：
@@ -89,12 +93,20 @@ gh-llm issue view <issue_number> --repo <owner/repo>
 
 ```bash
 gh-llm pr timeline-expand <page> --pr <pr_number> --repo <owner/repo>
+gh-llm pr timeline-expand <page> --pr <pr_number> --repo <owner/repo> --expand resolved,hidden,details
 gh-llm pr event <index> --pr <pr_number> --repo <owner/repo>
 gh-llm pr review-expand <PRR_id[,PRR_id...]> --pr <pr_number> --repo <owner/repo>
 
 gh-llm issue timeline-expand <page> --issue <issue_number> --repo <owner/repo>
+gh-llm issue timeline-expand <page> --issue <issue_number> --repo <owner/repo> --expand hidden,details
 gh-llm issue event <index> --issue <issue_number> --repo <owner/repo>
 ```
+
+`--expand` 推荐值：
+
+- PR: `resolved`, `hidden`, `details`, `all`
+- Issue: `hidden`, `details`, `all`
+- 支持逗号分隔和重复传参（如 `--expand hidden --expand details`）。
 
 ### 步骤 3：确认后再做交互动作
 
