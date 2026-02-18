@@ -96,6 +96,8 @@ gh-llm pr timeline-expand <page> --pr <pr_number> --repo <owner/repo>
 gh-llm pr timeline-expand <page> --pr <pr_number> --repo <owner/repo> --expand resolved,outdated,minimized,details
 gh-llm pr comment-expand <comment_id> --pr <pr_number> --repo <owner/repo>
 gh-llm pr review-expand <PRR_id[,PRR_id...]> --pr <pr_number> --repo <owner/repo>
+# 仅展开部分 conversation（例如中间隐藏区间）
+gh-llm pr review-expand <PRR_id> --threads <start-end> --pr <pr_number> --repo <owner/repo>
 
 gh-llm issue timeline-expand <page> --issue <issue_number> --repo <owner/repo>
 gh-llm issue timeline-expand <page> --issue <issue_number> --repo <owner/repo> --expand minimized,details
@@ -319,7 +321,7 @@ gh pr comment <pr_number> --repo <owner/repo> --body-file /tmp/pr-comment.txt
 在结束任务前逐项确认：
 
 1. 是否已经跑过 `view`？
-2. 是否补齐缺失上下文（expand/event/review-expand）？
+2. 是否补齐缺失上下文（expand/comment-expand/review-expand）？
 3. 是否提供了可执行命令而不仅是链接？
 4. 如果做了 review，是否已 submit？
 5. 是否引用了至少一个相关 PR/Issue 或线程上下文？
