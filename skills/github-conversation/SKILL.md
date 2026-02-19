@@ -62,7 +62,7 @@ PR：
 ```bash
 gh-llm pr view <pr_number> --repo <owner/repo>
 # 自动展开常见折叠信息（可选）
-gh-llm pr view <pr_number> --repo <owner/repo> --expand resolved,outdated,minimized,details
+gh-llm pr view <pr_number> --repo <owner/repo> --expand resolved,minimized,details
 ```
 
 Issue：
@@ -93,7 +93,7 @@ gh-llm issue view <issue_number> --repo <owner/repo> --expand minimized,details
 
 ```bash
 gh-llm pr timeline-expand <page> --pr <pr_number> --repo <owner/repo>
-gh-llm pr timeline-expand <page> --pr <pr_number> --repo <owner/repo> --expand resolved,outdated,minimized,details
+gh-llm pr timeline-expand <page> --pr <pr_number> --repo <owner/repo> --expand resolved,minimized,details
 gh-llm pr comment-expand <comment_id> --pr <pr_number> --repo <owner/repo>
 gh-llm pr review-expand <PRR_id[,PRR_id...]> --pr <pr_number> --repo <owner/repo>
 # 仅展开部分 conversation（例如中间隐藏区间）
@@ -106,7 +106,7 @@ gh-llm issue comment-expand <comment_id> --issue <issue_number> --repo <owner/re
 
 `--expand` 推荐值：
 
-- PR: `resolved`, `outdated`, `minimized`, `details`, `all`
+- PR: `resolved`, `minimized`, `details`, `all`
 - Issue: `minimized`, `details`, `all`
 - 支持逗号分隔和重复传参（如 `--expand minimized --expand details`）。
 
