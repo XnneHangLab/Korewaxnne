@@ -112,7 +112,7 @@ gh-llm issue comment-expand <comment_id> --issue <issue_number> --repo <owner/re
 
 `--show` 推荐值：
 
-- PR: `meta`, `description`, `timeline`, `checks`, `actions`, `all`
+- PR: `meta`, `description`, `timeline`, `checks`, `actions`, `mergeability`, `all`
 - Issue: `meta`, `description`, `timeline`, `actions`, `all`
 - 支持逗号分隔和重复传参（如 `--show meta --show timeline`）。
 - `summary` 是 `meta,description` 的别名。
@@ -187,6 +187,9 @@ gh-llm pr checks --pr <pr_number> --repo <owner/repo>
 
 # 查看全量 checks
 gh-llm pr checks --pr <pr_number> --repo <owner/repo> --all
+
+# 按需检测冲突文件（仅冲突 PR）
+gh-llm pr conflict-files --pr <pr_number> --repo <owner/repo>
 ```
 
 ## Issue 阅读
