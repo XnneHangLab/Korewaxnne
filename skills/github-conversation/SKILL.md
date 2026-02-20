@@ -160,7 +160,85 @@ gh-llm issue comment-expand <comment_id> --issue <issue_number> --repo <owner/re
 
 不满足以上任意一项，不应直接给确定性结论。
 
-## PR 阅读（重点）
+## 回复与落地规范（新增）
+
+### 1) 论点举证要求（强制）
+
+当阐述观点时，必须尽可能给出可核验证据，优先级如下：
+
+1. 代码片段（含文件路径与行号）
+2. CI / logs / checks 输出
+3. 相关 PR/Issue 链接与时间线事件
+
+最低标准：每个关键结论至少绑定一条证据。
+
+### 2) 回复 comment 时必须使用引用（`>`）
+
+在回复他人 comment 时，正文中必须引用被回复内容（可摘录片段，不必全量复读），避免上下文错位。
+
+示例：
+
+```text
+> "Argument name is already provided" could be more helpful
+
+已采纳。已将错误信息改为更明确的“positionally and as keyword”版本，并补充对应测试。
+```
+
+要求：
+
+1. 先引用，再回复。
+2. 引用可截取关键句，禁止断章取义。
+3. 回复要明确“是否采纳 + 改动位置 + 验证方式”。
+
+### 3) 处理 review 的标准流程（强制）
+
+处理他人 review 时，必须：
+
+1. 展开该 review 的全部内容并逐条检查。
+2. 对每条 review comment/thread 给出礼貌回复（可简短，但要有结论）。
+3. 已修复的 thread 立即标记为 resolved。
+4. 优先使用“单次 review 总结回复”做收口，避免碎片化刷屏。
+
+推荐流程命令：
+
+```bash
+# 展开 review 全量细节
+gh-llm pr review-expand <PRR_id[,PRR_id...]> --pr <pr_number> --repo <owner/repo>
+
+# 逐线程回复与 resolve
+gh-llm pr thread-reply <thread_id> --body '<reply>' --pr <pr_number> --repo <owner/repo>
+gh-llm pr thread-resolve <thread_id> --pr <pr_number> --repo <owner/repo>
+
+# 最后统一 review 收口（推荐）
+gh-llm pr review-submit --event COMMENT --body '<summary>' --pr <pr_number> --repo <owner/repo>
+```
+
+### 4) 采纳 reviewer 建议时添加 co-author（强制）
+
+当你明确采纳了 reviewer 的建议并形成新提交时，应在该提交中添加对应 reviewer 为 co-author，以尊重其贡献。
+
+提交消息示例：
+
+```text
+fix: refine argument error message
+
+Co-authored-by: <reviewer_name> <reviewer_email>
+```
+
+注意：
+
+1. 仅在“实质采纳建议并产生代码变更”时添加。
+2. co-author 建议加在实际承载该修改的 commit 上。
+3. 若 reviewer 邮箱未知，请使用其公开 noreply 邮箱。
+
+### 5) 基于对话的补充实践（建议）
+
+1. 对 reviewer 的每条意见给出“结论词”开头：`已修复` / `已解释` / `暂不采纳（原因）`。
+2. 对争议点优先贴最小复现片段，而不是长段口头解释。
+3. 若一次改动覆盖多个 thread，在统一 review 总结中附“thread_id -> 处理结果”简表。
+4. 涉及行为变化时，在回复里附验证命令（如 `pytest <path>` / `ruff check <path>`）。
+
+## PR 阅读
 
 PR 中包含诸多有效信息，这包含了 PR 标题、描述、提交记录、文件更改记录、CI 检查结果、审查意见等。仅阅读某一项无法全面理解 PR 内容，因此必须综合考虑。
 
